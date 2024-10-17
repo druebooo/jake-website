@@ -21,7 +21,7 @@ const App = () => {
             {/* private routes */}
             <Route element={<RootLayout />}>
                 <Route index element = {<Home />} />
-                <Route path='/explore' element = {<Explore />}></Route>
+                {/* <Route path='/explore' element = {<Explore />}></Route> */}
                 <Route path='/saved' element = {<Saved />}></Route>
                 <Route path='/all-users' element = {<AllUsers />}></Route>
                 <Route path='/create-post' element = {<CreatePost />}></Route>
