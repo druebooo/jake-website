@@ -4,7 +4,6 @@ import { useUserContext } from '@/context/AuthContext';
 import { useDeletePost, useGetPostById, useGetUserPosts } from '@/lib/react-query/queriesAndMutations'
 import { multiFormatDateString } from '@/lib/utils';
 import { Loader } from 'lucide-react';
-import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const PostDetails = () => {
@@ -13,14 +12,11 @@ const PostDetails = () => {
   const { user } = useUserContext();
 
   const { data: post, isLoading } = useGetPostById(id);
-  const { data: userPosts, isLoading: isUserPostLoading } = useGetUserPosts(
+  useGetUserPosts(
     post?.creator.$id
   );
   const { mutate: deletePost } = useDeletePost();
 
-  const relatedPosts = userPosts?.documents.filter(
-    (userPost: { $id: string | undefined; }) => userPost.$id !== id
-  );
 
   const handleDeletePost = () => {
     deletePost({ postId: id, imageId: post?.imageId });

@@ -9,7 +9,6 @@ import { useToast } from '@/hooks/use-toast';
 import { useGetUserById, useUpdateUser } from '@/lib/react-query/queriesAndMutations';
 import { ProfileValidation } from '@/lib/validation';
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { z } from 'zod';
@@ -32,7 +31,7 @@ const UpdateProfile = () => {
 
   // Queries
   const { data: currentUser } = useGetUserById(id || "");
-  const { mutateAsync: updateUser, isLoading: isLoadingUpdate } =
+  const { mutateAsync: updateUser, isPending: isLoadingUpdate } =
     useUpdateUser();
 
   if (!currentUser)
