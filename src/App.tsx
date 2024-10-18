@@ -7,6 +7,7 @@ import SignupForm from './_auth/forms/SignupForm';
 import AuthLayout from './_auth/AuthLayout';
 import RootLayout from './_root/RootLayout';
 import { Toaster } from "@/components/ui/toaster"
+import About from './_root/pages/About';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
                 <Route index element = {<Home />} />
                 {/* <Route path='/explore' element = {<Explore />}></Route> */}
                 <Route path='/saved' element = {<Saved />}></Route>
+                <Route path='/about' element = {<About />}></Route>
                 <Route path='/all-users' element = {<AllUsers />}></Route>
                 <Route path='/create-post' element = {<CreatePost />}></Route>
                 <Route path='/update-post/:id' element = {<EditPost />}></Route>

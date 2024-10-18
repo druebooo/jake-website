@@ -1,4 +1,5 @@
 export { default as Home} from './Home';
+export { default as About} from './About';
 export { default as Saved} from './Saved';
 export { default as CreatePost} from './CreatePost';
 export { default as Profile} from './Profile';
